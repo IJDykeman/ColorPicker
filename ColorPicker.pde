@@ -3,9 +3,10 @@ PImage colorImage;
 int squareWidth = 0;
 int squareHeight = 0;
 int gridWidth = 16;
+ColorPallete palette = new ColorPallete();
 
 void setup(){
-  ColorPallete.loadContent();
+  palette.loadContent();
   colorImage = loadImage("colorPalette.png");
   size(colorImage.width+200, colorImage.height+200);
   squareWidth = colorImage.width/16;
@@ -19,7 +20,10 @@ void setup(){
     }
   }
   
-  for(int i=0;i<
+  println("old to new color system conversions");
+  for(int i=0;i<256;i++){
+    println(i + "  -  " + palette.getNewintFromOldint(i));
+  }
 }
 
 

@@ -550,23 +550,23 @@ class ColorPallete
     }
   }
 
-  public byte getNewByteFromOldByte(byte oldType)
+  public int getNewintFromOldint(int oldType)
   {
     if (oldType == 0)
     {
       return 0;
     }
     int old = OLDcolorArray[oldType];
-    byte newByte = 0;
+    int newint = 0;
 
     for (int i = 0; i <= 255; i++)
     {
-      if (colorDist(colorArray[i], old) < colorDist(colorArray[newByte], old))
+      if (colorDist(colorArray[i], old) < colorDist(colorArray[newint], old))
       {
-        newByte = (byte)i;
+        newint = (int)i;
       }
     }
-    return newByte;
+    return newint;
   }
 
   public float colorDist(int color1, int color2)
